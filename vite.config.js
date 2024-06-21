@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: port,
+    host: '0.0.0.0',
     proxy: {
       '/commandes': {
         target: 'https://python-api-prod.onrender.com',
