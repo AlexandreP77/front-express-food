@@ -75,7 +75,7 @@ export default {
   methods: {
     fetchCommandes() {
       const token = localStorage.getItem('authToken');
-      axios.get('http://127.0.0.1:8000/commandes/?format=json', {
+      axios.get('https://python-api-prod.onrender.com/commandes/?format=json', {
         headers: {'Authorization': `Token ${token}`}
       }).then(response => {
         this.commandes = response.data;
@@ -85,7 +85,7 @@ export default {
     },
     fetchLivreurs() {
       const token = localStorage.getItem('authToken');
-      axios.get('http://127.0.0.1:8000/livreurs/?format=json', {
+      axios.get('https://python-api-prod.onrender.com/livreurs/?format=json', {
         headers: {'Authorization': `Token ${token}`}
       }).then(response => {
         this.livreurs = response.data;
@@ -95,7 +95,7 @@ export default {
     },
     updateLivreurStatus(livreur) {
       const token = localStorage.getItem('authToken');
-      axios.patch(`http://127.0.0.1:8000/livreurs/${livreur.id}/`, {
+      axios.patch(`https://python-api-prod.onrender.com/livreurs/${livreur.id}/`, {
         statut: livreur.statut
       }, {
         headers: {'Authorization': `Token ${token}`}
@@ -107,7 +107,7 @@ export default {
     },
     updateCommandeStatus(commande, statut) {
       const token = localStorage.getItem('authToken');
-      axios.patch(`http://127.0.0.1:8000/commandes/${commande.id}/`, {
+      axios.patch(`https://python-api-prod.onrender.com/commandes/${commande.id}/`, {
         statut: statut
       }, {
         headers: {'Authorization': `Token ${token}`}

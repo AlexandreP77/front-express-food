@@ -142,7 +142,7 @@ export default {
     };
   },
   mounted() {
-    fetch('http://127.0.0.1:8000/produits/?format=json')
+    fetch('https://python-api-prod.onrender.com/produits/?format=json')
       .then(response => response.json())
       .then(data => {
         this.produits = data.slice(0, 4);

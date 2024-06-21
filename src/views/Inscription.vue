@@ -87,7 +87,7 @@
           return;
         }
   
-        axios.post('http://127.0.0.1:8000/inscription/?format=json', {
+        axios.post('https://python-api-prod.onrender.com/inscription/?format=json', {
           username: this.username,
           email: this.email,
           password: this.password

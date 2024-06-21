@@ -93,7 +93,7 @@ export default {
         statut: "en_cours",
       };
 
-      axios.post('http://127.0.0.1:8000/commandes/', orderData, {
+      axios.post('https://python-api-prod.onrender.com/commandes/', orderData, {
         headers: {'Authorization': `Token ${token}`}
       }).then(response => {
         const orderId = response.data.id;
@@ -105,7 +105,7 @@ export default {
     },
     addAllProductsToOrder(orderId, token) {
     const requests = this.cart.map(item => {
-      return axios.post(`http://127.0.0.1:8000/commande_produits/`, {
+      return axios.post(`https://python-api-prod.onrender.com/commande_produits/`, {
         produit: item.id,
         quantite: item.quantity,
         commande: orderId

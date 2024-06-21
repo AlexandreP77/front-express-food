@@ -60,7 +60,7 @@ export default {
     async createPaymentIntent() {
       const tokenAuth = localStorage.getItem('authToken');
       try {
-        const response = await axios.post(`http://127.0.0.1:8000/createpaiement/${this.orderId}/create_payment_intent/`, {}, {
+        const response = await axios.post(`https://python-api-prod.onrender.com/createpaiement/${this.orderId}/create_payment_intent/`, {}, {
           headers: {'Authorization': `Token ${tokenAuth}`}
         });
         this.clientSecret = response.data.client_secret;
@@ -88,7 +88,7 @@ export default {
     async verifyPayment() {
       const tokenAuth = localStorage.getItem('authToken');
       try {
-        const response = await axios.post(`http://127.0.0.1:8000/createpaiement/${this.orderId}/verify_payment/`, {}, {
+        const response = await axios.post(`https://python-api-prod.onrender.com/createpaiement/${this.orderId}/verify_payment/`, {}, {
           headers: {'Authorization': `Token ${tokenAuth}`}
         });
         if (response.data.status === 'succeeded') {

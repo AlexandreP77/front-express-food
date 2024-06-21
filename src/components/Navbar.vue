@@ -47,7 +47,7 @@ export default {
     },
     async checkIfLivreur(token) {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/livreurs/', {
+        const response = await axios.get('https://python-api-prod.onrender.com/livreurs/', {
           headers: { Authorization: `Token ${token}` }
         });
         const livreurs = response.data;

@@ -48,7 +48,7 @@ export default {
   methods: {
     fetchCommandes() {
       const token = localStorage.getItem('authToken');
-      axios.get('http://127.0.0.1:8000/commandes/?format=json', {
+      axios.get('https://python-api-prod.onrender.com/commandes/?format=json', {
         headers: {
           'Authorization': `Token ${token}`
         }

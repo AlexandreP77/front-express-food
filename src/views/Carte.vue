@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     fetchProduits() {
-      axios.get('http://127.0.0.1:8000/produits/?format=json')
+      axios.get('https://python-api-prod.onrender.com/produits/?format=json')
         .then(response => {
           this.produits = response.data;
         })

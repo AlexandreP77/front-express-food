@@ -58,7 +58,7 @@
     },
     methods: {
       login() {
-        axios.post('http://127.0.0.1:8000/connexion/?format=json', {
+        axios.post('https://python-api-prod.onrender.com/connexion/?format=json', {
           username: this.username,
           password: this.password
         })
@@ -78,7 +78,7 @@
           Authorization: `Token ${localStorage.getItem('authToken')}`
         };
   
-        axios.get('http://127.0.0.1:8000/livreurs/', { headers })
+        axios.get('https://python-api-prod.onrender.com/livreurs/', { headers })
           .then(response => {
             const livreurs = response.data;
             const user = livreurs.find(livreur => livreur.user.username === this.username);
@@ -102,7 +102,7 @@
           Authorization: `Token ${localStorage.getItem('authToken')}`
         };
   
-        axios.get('http://127.0.0.1:8000/clients/', { headers })
+        axios.get('https://python-api-prod.onrender.com/clients/', { headers })
           .then(response => {
             const clients = response.data;
             const user = clients.find(client => client.user.username === this.username);

@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/commandes': {
-        target: 'http://127.0.0.1:8000',
+        target: 'https://python-api-prod.onrender.com',
         changeOrigin: true
       }
     }
